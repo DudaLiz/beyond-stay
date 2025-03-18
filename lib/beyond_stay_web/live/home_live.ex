@@ -5,9 +5,9 @@ defmodule BeyondStayWeb.Live.HomeLive do
 
   def mount(_params, _session, socket) do
     images = [
-      %{url: "/images/stay1.jpg", description: "Relaxing beachfront stay"},
-      %{url: "/images/stay2.jpg", description: "Cozy mountain retreat"},
-      %{url: "/images/stay3.jpg", description: "Luxury city escape"}
+      %{url: "/images/stay1.jpg", description: "Relaxing pet-friendly stay"},
+      %{url: "/images/stay2.jpg", description: "Your poolside office"},
+      %{url: "/images/stay3.jpg", description: "Your home in Valencia"}
     ]
 
     reviews = [
@@ -62,18 +62,48 @@ defmodule BeyondStayWeb.Live.HomeLive do
         </div>
         <div class="w-2/5 p-6 bg-[#146ebb] bg-opacity-50 text-white rounded-lg">
           <h2 class="text-2xl font-bold">Welcome to Beyond Stay</h2>
-          <p class="mt-2">Discover your perfect getaway with us, whether it's a cozy retreat, a luxury escape, or a pet-friendly stay.</p>
+          <p class="mt-2">Discover your perfect home away from home with us, for digital nomads, travellers with pets, and the perfect retreat while you look for your forever home in Valencia.</p>
         </div>
       </div>
 
-      <!-- Book a Stay Buttons -->
+      <!-- Book a Stay -->
       <div class="grid grid-cols-2 gap-6 my-6">
         <div class="p-6 bg-[#63aac0] rounded-lg text-center">
           <h2 class="text-xl font-bold text-white">Book a Stay</h2>
+          <lable>Select a Room Type</lable>
+          <select> 
+            <option value="single">Single Room</option>
+            <option value="double">Double Room</option>
+            <option value="double_ac">Double Romm w/ Airconditioning</option>
+          </select>
+          <lable>How many people will stay in the room</lable>
+          <input type="number" min="1" max="2">
+          <lable>Are you bringing any pets?</lable>
+          <input type="number" min="0" max="5">
+          <lable>When you would like to book for?</lable>
+          <input type="date">
           <button class="bg-[#fbcd40] text-white px-4 py-2 rounded-full shadow-md hover:bg-[#eb6868] transition duration-300">Reserve</button>
         </div>
+
+      <!-- Book a Pet Stay -->
         <div class="p-6 bg-[#63aac0] rounded-lg text-center">
           <h2 class="text-xl font-bold text-white">Book a Pet Stay</h2>
+          <lable>Select a Service</lable>
+          <select> 
+            <option value="boarding">Boarding</option>
+            <option value="daycare">Day Care</option>
+            <option value="walk">Walk</option>
+          </select>
+          <lable for="quantity">How many pets is this service for?</lable>
+          <input type="number" id="quantity" name="quantity" min="1" max="5">
+          <lable>What type of pet are you booking for?</lable>
+          <select>
+          <option>Dog</option>
+          <option>Cat</option> 
+          <option>Other</option>
+          </select>
+          <lable>What dates do you want to book for?</lable>
+          <input type="date">
           <button class="bg-[#fbcd40] text-white px-4 py-2 rounded-full shadow-md hover:bg-[#eb6868] transition duration-300">Reserve</button>
         </div>
       </div>
